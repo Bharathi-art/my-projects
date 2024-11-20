@@ -1,0 +1,138 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.navbar {
+    background-color: black;
+    padding: 0;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: green;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 50px); 
+}
+
+.column1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+.column2 {
+     flex:1 ;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e8e8;
+}
+
+form {
+    width: 80%;
+    max-width: 350px;
+    padding: 20px;
+    background-color: lightblue;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+label, input, h2, .button {
+    margin: 10px 0;
+    display: block;
+}
+#lname{
+    padding: 10px;
+    width: 80%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 86%; 
+}
+
+.input-group i {
+    position: absolute; 
+    left: 10px; 
+    font-size: 16px; 
+    color: #333;  
+    pointer-events: none; 
+}
+
+.input-group input {
+    flex: 1;
+    padding: 10px 10px 10px 35px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    cursor: pointer; 
+    text-align: center;
+}
+
+.button:hover {
+    background-color: darkgreen;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    font-size: 14px;
+}
