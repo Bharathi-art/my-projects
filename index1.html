@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>PHONE NUMBER VALIDATION</h1>
+  Enter your Phone number: <input  type="text" id="phone"><br>
+  <button onclick="validatePhoneNumber()">Validate</button>
+
+  <script>
+     function validatePhoneNumber(phone)
+    {
+
+      var phone = document.getElementById("phone").value;
+      const phoneRegex = /^\+?[1-9]\d{1,14}$/; //validate simple expressiom
+
+      var result = phoneRegex.test(phone);
+
+      if(result==true){
+        alert("Great,Its valid")
+      }
+      else{
+        alert("sorry,Its not valid")
+      }
+    }
+    
+    
+  </script>
+  
+</body>
+</html>
+

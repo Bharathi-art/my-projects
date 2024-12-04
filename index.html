@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display js value in  document </title>
+</head>
+<body>
+    <p id="displayName"></p>
+
+    <script>
+        const obj = {
+            name: "I am Bharathi",
+            age: "My age is 20"
+        };
+        document.getElementById("displayName").textContent = obj.name +  ",  "  + obj.age;
+    </script>
+</body>
+</html>
