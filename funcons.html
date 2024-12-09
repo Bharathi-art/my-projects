@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Product(name, price, discountRate) {
+            this.Name = name;
+            this.price = price;
+            this.discountRate = discountRate;
+
+            this.discount = function() {
+                const offer = this.price * (this.discountRate / 100); 
+                console.log("Discounted price of", this.Name, "is:", this.price - offer);
+            };
+        }
+
+        const product = new  Product("Laptop", 50000, 10);
+        const product2 = new Product("iPhone", 75000, 20);
+
+        console.log("Product 1:", product.Name);
+        product.discount(); 
+
+        console.log("Product 2:", product2.Name);
+        product2.discount(); 
+    </script>
+</body>
+</html>
+

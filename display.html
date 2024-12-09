@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account</title>
+</head>
+<body>
+    <h1>Bank Account Information</h1>
+    <div id="output"></div>
+
+    <script>
+        // Declaring Anonymous class
+        const Bankaccount = class {
+            constructor(accountno, accountholder, balance) {
+                this.accountno = accountno;
+                this.accountholder = accountholder;
+                this.balance = balance;
+            }
+
+            // Method to deposit money
+            deposit(amount) {
+                this.balance += amount;
+                this.displayMessage(`Account Balance after deposit of ${amount}: ${this.balance}`);
+            }
+
+            // Method to withdraw money
+            withdraw(amount) {
+                if (amount > this.balance) {
+                    this.displayMessage("Insufficient balance.");
+                } else {
+                    this.balance -= amount;
+                    this.displayMessage(`Account Balance after withdrawal of ${amount}: ${this.balance}`);
+                }
+            }
+
+            // Method to display account information
+            getAccountInfo() {
+                this.displayMessage(`Account Number: ${this.accountno}`);
+                this.displayMessage(`Account Holder: ${this.accountholder}`);
+                this.displayMessage(`Account Balance: ${this.balance}`);
+            }
+
+            // Helper method to display messages or headings on the webpage
+            displayMessage(message, headingLevel = "p") {
+                const outputDiv = document.getElementById("output");
+                const element = document.createElement(headingLevel); // Create a heading or paragraph element
+                element.textContent = message;
+                outputDiv.appendChild(element);
+            }
+        };
+
+        // Creating an instance of Bankaccount
+        const obj1 = new Bankaccount(34567876543, "Bharathi", 25000);
+
+        // Displaying initial information as a heading
+        obj1.displayMessage("Initial Account Information:", "h2");
+        obj1.getAccountInfo();
+
+        // Performing transactions
+        obj1.displayMessage("Performing Transactions:", "h2");
+        obj1.deposit(500); // Deposit 500
+        obj1.withdraw(500); // Withdraw 500
+
+        // Displaying updated account information
+        obj1.displayMessage("Updated Account Information:", "h2");
+        obj1.getAccountInfo();
+    </script>
+</body>
+</html>
