@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imagechanger</title>
+    <style>
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;   
+            height: 300px;         
+            text-align: center;    
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px; 
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 5s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>The Image Laptop</h1>
+    <div class="container">
+        <div class="img">
+            <img id="one" src="./img/lap.jpg" alt="Laptop" height="400px" width="400px">
+        </div>
+        <button class="btn" onclick="handleChange()">Change Image</button>
+    </div>
+
+    <script>
+       setTimeout( function handleChange() {
+            // i am getting the image element
+            const image = document.getElementById('one');
+
+            
+            if (image.getAttribute('src') === './img/lap.jpg') {
+                image.setAttribute('src', './img/raina.jpg'); 
+            } else {
+                image.setAttribute('src', './img/lap.jpg'); 
+            }
+        },5000);
+    </script>
+
+</body>
+</html>
