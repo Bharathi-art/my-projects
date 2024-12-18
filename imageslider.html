@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Slider</h1>
+  <img id="slider" src="./img/python.jpeg" alt="Slider Image" height="400px" width="400">
+  <br>
+  <button id="prevButton" onclick="previousImage()">Previous</button>
+  <button id="nextButton" onclick="nextImage()">Next</button>
+
+  <script>
+    const images = [
+    './img/python.jpeg',
+    './img/java.jpeg',
+    './img/js.jpeg',
+    './img/R.jpeg',
+    './img/flutter.jpeg'
+    ];
+        
+    let currentIndex = 0;
+
+    const slider = document.getElementById('slider');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+
+    function updateButtons() {
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex === images.length - 1;
+    }
+
+    function previousImage() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        slider.src = images[currentIndex];
+        updateButtons();
+      }
+    }
+
+    function nextImage() {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+        slider.src = images[currentIndex];
+        updateButtons();
+      }
+    }
+
+    // Initialize buttons state
+    updateButtons();
+  </script>
+</body>
+</html>
